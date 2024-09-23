@@ -1,0 +1,19 @@
+<div class="mainbox">
+    {% for list in post %}
+        {% if list.3 == 't' %}
+            <div class="postbox" onclick="location.href='{% url 'post_detail' list.0 %}'">
+                <img src="{{ list.8 }}">
+                <div class="post-content">
+                    <div class="posttitle">{{ list.1 }}</div>
+                    <p>{{ list.2 }}</p>
+                    <div class="posttag">
+                        {% for i in list.9%}
+                            <p>{{i}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+    {% endfor %}
+</div>

@@ -1,0 +1,60 @@
+<div class='maincontent'>
+    <div class="header">
+        <a href="./"><img src="{{ notice.0.10 }}"
+            style="width: 100%; height: 100%; object-fit: cover; "></a>
+    </div>
+    <div class="notice">
+        <span class="material-symbols-outlined" style='font-size: 15px; display: flex; justify-content: center;'>notifications</span>
+        <div class="notice-t">
+            NOTICE
+        </div>
+        <p>{{ notice.0.1 }}</p>
+        <div class="notice-p">
+            <a href="https://x.com/bii_aaaaa" target="_blank">🔗트위터</a>
+            <a href="https://docs.google.com/spreadsheets/d/16TtRYpv3xII3uXA7yPcpWxMjpK_-S8P8vC4JQa28_sc/edit?usp=sharing" target="_blank">🔗TRPG 성향표</a>
+        </div>
+        <div class="img-container" >
+            <a href="./"><img src="{{ notice.0.2 }}"
+                style="width: 150px; height: 150px; object-fit: cover; "></a>
+        </div>
+    </div>
+    <div class="potocard">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="{{ notice.0.3 }}" alt="Image 1"></div>
+                <div class="slide"><img src="{{ notice.0.4 }}" alt="Image 2"></div>
+                <div class="slide"><img src="{{ notice.0.5 }}" alt="Image 3"></div>
+                <div class="slide"><img src="{{ notice.0.6 }}" alt="Image 3"></div>
+            </div>
+            <button class="prev-btn">❮</button>
+            <button class="next-btn">❯</button>
+        </div>
+    </div>
+    <div class="cover-img">
+        <div class="img-date" id="clock" style="color: {{ notice.0.7 }}"></div>
+        <div class="img-img">
+            <a href="main" ><img src="{{ notice.0.8 }}"
+             style="width: 280px; height: 200px; object-fit: cover; overflow:hidden;"></a>
+        </div>
+    </div>
+    <div class="cover-dday">
+        <div class="dday-img"><a href="main" ><img src="{{ notice.0.9 }}"></a></div>
+        {% for item in dday %}
+        <p style='padding: 3px 0px; display: flex; justify-content: space-between;'>
+            <span>{{ item.1 }}</span>
+            <span style="flex-grow: 1; border-bottom: 1px dashed #000; margin: 10px;"></span>
+            <span>D + {{ item.3 }}</span>
+          </p>
+        {% endfor %}
+    </div>
+
+    <div class="cover-banner">
+        <div class="notice-t">BANNER</div>
+        <div class="banner-t">
+            {% for item in banner %}
+                <a target='_blank' href="{{ item.2 }}" ><img src="{{ item.3 }}"                        style="width: 100%; height: auto; object-fit: cover; overflow:hidden;"></a>
+            {% endfor %}
+        </div>
+        <button class="bannerb" onclick='copyToClipboard()'>배너 이미지 주소 복사</button>
+    </div>
+</div>

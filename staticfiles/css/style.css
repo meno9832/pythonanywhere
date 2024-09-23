@@ -1,0 +1,439 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+:root {
+    --head_img: url(https://i.imgur.com/y3X6reS.jpeg);
+}
+
+
+
+
+
+
+
+/* ----폰트---- */
+
+@font-face {/* 프리텐다드체 */
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {/* 유니버스체 */
+    font-family: 'YUniverse-B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {/* 잉크립퀴드체 */
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {/*나눔명조*/
+  font-family: 'NanumMyeongjo';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.eot?#iefix') format('embedded-opentype'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.ttf') format("truetype");
+  font-display: swap;
+} 
+@font-face {/*코펍바탕*/
+  font-family: 'KoPubWorldBatang';
+  font-weight: 300;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.eot?#iefix') format('embedded-opentype'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.woff2') format('woff2'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.woff') format('woff'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.ttf') format("truetype");
+  font-display: swap;
+}
+
+
+
+
+
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: 'KoPubWorldBatang'
+}
+html, body {
+    height: 100%!important;
+    min-height: 100vh; /* 화면의 최소 높이를 100%로 설정 */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #f5fbff;
+    overflow-x: hidden;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+a:hover {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+p {
+    white-space: pre-wrap;
+  }
+pre {
+    font-family: 'Pretendard-Regular';
+    font-weight: 100;
+    text-align: left;
+    font-size: 13px;
+}
+.nav-link{
+    font-size: 15px;
+}
+
+
+
+
+.background {
+    display: flex;
+    height: auto; /* 화면 전체 높이 */
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+    padding-top: 100px;
+}
+nav {
+    display: flex; /* Flexbox를 사용하여 기본 레이아웃 설정 */
+    flex-direction: column; /* 세로 방향으로 배치 */
+    gap: 10px; /* 각 링크 사이에 간격 추가 */
+}
+.navbar {
+    position: sticky; /* 스크롤 시 고정 */
+    top: 15%; /* 스크롤 시 상단에 고정 */
+    height: 600px;
+    width: 200px;
+    background: linear-gradient(to bottom, rgba(66, 130, 255, 0), rgba(219, 161, 255, 0.5)); /* 위에서부터 투명도 조절 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    color: #000000; /* 글자색 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    padding: 20px; /* 패딩 추가 (선택 사항) */
+    box-sizing: border-box;
+}
+.maincontent {
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr;
+    grid-auto-rows: 90px;
+    grid-gap: 11px;
+    height: 800px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: 50px;
+}
+#ajax-content {
+    width: 100%;
+    display: flex;
+}
+.header {
+  grid-column: 1 /4;
+  height: 100px;
+  text-align: center;
+}
+.notice{
+  grid-row: 2 / 9;
+  width: 100%;
+  height: 700px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 15px 10px 10px;
+}
+.potocard{/* 커버 이미지 */
+  width: 100%;
+  height: 490px;
+  grid-column: 2;
+  grid-row: 2 / 7;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: 0px 1px 5px 2px #7171711f;
+  border-radius: 30px;
+  font-family: 'Pretendard-Regular';
+  font-weight: 100;
+  overflow: hidden;
+  background-color: #ffffff;
+  margin-top: 5px;
+  position: relative;
+}
+.cover-img{/* 커버 이미지 */
+  width: 100%;
+  height: 190px;
+  grid-column: 2;
+  grid-row: 7 / 9;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: 0px 1px 5px 2px #7171711f;
+  border-radius: 20px;
+  font-family: 'Pretendard-Regular';
+  font-weight: 100;
+  overflow: hidden;
+  background-color: #ffffff;
+  margin-top: 5px;
+  position: relative;
+}
+.img-date{/* 커버 이미지 */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding-top: 20px;
+  font-family: 'Pretendard-Regular';
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+.cover-dday{
+  width: 100%;
+  height: 290px;
+  grid-column: 3;
+  grid-row: 2 / 5;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: 0px 1px 5px 2px #7171711f;
+  border-radius: 20px;
+  font-family: 'Pretendard-Regular';
+  font-weight: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  margin-top: 10px;
+  padding: 10px;
+}
+.cover-banner{/* 커버 베너 */
+  width: 100%;
+  height: 390px;
+  grid-column: 3;
+  grid-row: 5 / 9;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: 0px 1px 5px 2px #7171711f;
+  border-radius: 20px;
+  font-family: 'Pretendard-Regular';
+  font-weight: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  margin-top: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 145px  /* 나머지 공간에 이미지가 들어감 */
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+}
+.prev-btn {
+  left: 10px;
+}
+.next-btn {
+  right: 10px;
+}
+/* 버튼에 호버 효과 추가 */
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.img-img {
+  display: flex;
+  justify-content: center;
+}
+  .banner-t{
+    margin-top: 5px; 
+    width: 100%;
+    overflow: auto;
+  }
+    .cover-banner::-webkit-scrollbar {/* 스크롤바 */
+      width: 5px;  /* 스크롤바의 너비 */
+      height: 1px;
+  }
+    .cover-banner::-webkit-scrollbar-thumb {
+      height: 1px; /* 스크롤바의 길이 */
+      background: #99000000;/*스크롤바의 색상 */
+      border-radius: 10px;
+  }
+    .cover-banner::-webkit-scrollbar-track {
+      background: rgba(33, 121, 244, 0);  /*스크롤바 뒷 배경 색상*/
+  }
+  
+.dday-img {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+}
+.bannerb {
+  background-color: #b1b1b1;
+  border-radius: 10px;
+  border: #808080;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 100px;
+  margin-left: -50px;
+}
+.bannerb:hover {
+  background-color: #757575;
+}
+ 
+
+
+
+
+/*     텍스트 양식     */
+.notice-t{
+    font-family: 'YUniverse-B';
+    font-size: 20px;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 5px;
+}
+.notice p {
+    height: 330px;  /* 공지 텍스트 높이 */
+}
+.notice-p {
+  height: 150px;
+  white-space: pre-wrap;
+}
+
+
+
+
+
+
+
+
+/* 모바일 환경에서의 수정 */
+@media all and (max-width: 768px) {
+  nav {
+      display: flex; /* Flexbox를 사용하여 기본 레이아웃 설정 */
+      flex-direction: row; /* 가로 정렬 */
+      align-items: center; /* 세로 중앙 정렬 */
+      gap: 10px; /* 각 링크 사이에 간격 추가 */
+  }
+  .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 30px;
+      background: rgb(146, 183, 255);
+      border-radius: 0px 0px 0px 10px;
+      padding: 10px 20px 30px 20px;
+  }
+  /* maincontent의 flex-direction을 column으로 변경하여 세로 정렬 */
+  .maincontent {
+      grid-template-columns: 100% 0% 0%;
+      grid-auto-rows: auto;
+      margin-left: 0; /* 좌측 마진 제거 */
+  }
+  #ajax-content {
+      display: block; /* 모바일에서 블록 요소로 설정 */
+      margin: 0; /* 모바일에서 여백 제거 */
+  }
+  .header {
+    height: 100px;
+  }
+  .notice{
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    height: 500px;
+  }
+  .notice p {
+    height: 180px;  /* 공지 텍스트 높이 */
+  }
+  .notice-p {
+    height: 100px;
+    white-space: pre-wrap;
+  }
+  .potocard{/* 커버 이미지 */
+    width: 100%;
+    height: 490px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .cover-img{/* 커버 이미지 */
+    width: 100%;
+    height: 200px;
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .cover-dday{
+    grid-column: 1;
+    grid-row: 5;
+  }
+  .cover-banner{/* 커버 베너 */
+    width: 100%;
+    height: 400px;
+    grid-column: 1;
+    grid-row: 6;
+    padding: 10px 50px 10px;
+  }
+}

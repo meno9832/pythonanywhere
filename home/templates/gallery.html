@@ -1,0 +1,26 @@
+<div class="mainbox">
+    <div class="category-buttons">
+        <button onclick="filterGallery('all')">All</button>
+        <button onclick="filterGallery('1')">율숍</button>
+        <button onclick="filterGallery('2')">우르</button>
+        <button onclick="filterGallery('3')">유피텔</button>
+        <button onclick="filterGallery('4')">니토필</button>
+        <button onclick="filterGallery('5')">카타튜링</button>
+        <button onclick="filterGallery('6')">기타</button>
+    </div>
+
+
+    <div class="gallery">
+        {% for i in gallery%}
+        <div class="gallery-item {{ i.2 }}"><img src="{{ i.3 }}" onclick="openModal(this)"></div>
+        {% endfor %}
+    </div>
+
+    <!-- 모달 창 -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modal-image" src="" alt="Full Size">
+        </div>
+    </div>
+</div>

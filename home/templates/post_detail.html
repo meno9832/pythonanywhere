@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<!-- head -->
+<head>
+
+    <!-- 타이틀 -->
+    <title>MENON</title>
+    {% load static %}
+    <!-- //stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<div class="fixed-buttons">
+    <button onclick="location.href='{% url 'main' %}'">홈</button>
+</div>
+
+<div class="background">
+    <div class="titlep">{{ post.title }}</div>
+    <div class="subt">{{ post.sub_title }}</div>
+    <div class="posttag">
+        {% for i in tags%}
+            <p>{{i}}</p>
+        {% endfor %}
+    </div>
+    <p>작성일: {{ post.created_at }}</p>
+
+    <hr />
+
+
+    <div>{{ post.content|safe }}</div>
+
+</div>
+</body>
+</html>

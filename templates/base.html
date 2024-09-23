@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MENON</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gal.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'js/ajax.js' %}" defer></script>
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script src="{% static 'js/gal.js' %}" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+</head>
+
+
+
+
+<body>
+    <div class="background">
+        <div class="navbar">
+            <nav>
+                <a href="{% url 'main' %}" class="nav-link"><img src="https://i.imgur.com/AL9hvwl.png"></a>
+                <a href="{% url 'section2' %}" class="nav-link">Pair</a>
+                <a href="{% url 'gallery' %}" class="nav-link">Gallery</a>
+                <a href="{% url 'section4' %}" class="nav-link">TRPG Log</a>
+                <a href="{% url 'section5' %}" class="nav-link">Commission</a>
+                <div class="musicBlock" id="musicBlock">▷</div>
+                <a href="{% url 'admin:index' %}">Admin</a>
+            </nav>
+        </div>
+
+        <div id="ajax-content">
+            <!-- 여기에 AJAX로 로드된 내용이 삽입됩니다 -->
+        </div>
+    </div>
+
+    <div id="player"></div>
+
+    <script>
+        var player;
+        var isPlaying = false;  // 비디오 재생 상태 추적
+    
+        // YouTube iFrame API 로드 후 플레이어를 생성
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: 'Im7-2qRc38A',  // 여기에 YouTube 비디오 ID를 넣습니다.
+                events: {
+                    'onReady': onPlayerReady
+                },
+                playerVars: {
+                    'autoplay': 1,  // 자동 재생
+                    'mute': 1       // 자동 재생시 음소거
+                }
+            });
+        }
+    
+        // 플레이어 준비 완료 시 자동 재생
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+    
+        // 음악 박스 클릭 시 재생/중지 토글
+        document.getElementById('musicBlock').addEventListener('click', function() {
+            if (isPlaying) {
+                player.pauseVideo();  // 비디오 일시 정지
+            } else {
+                player.playVideo();   // 비디오 재생
+            }
+            isPlaying = !isPlaying;  // 재생 상태 토글
+        });
+    
+        // 클릭 시 음소거 해제
+        document.addEventListener('click', function() {
+            if (player.isMuted()) {
+                player.unMute();  // 음소거 해제
+            }
+        });
+    </script>
+    
+    <!-- YouTube IFrame API 로드 -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

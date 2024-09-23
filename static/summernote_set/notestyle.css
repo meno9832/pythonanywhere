@@ -1,0 +1,90 @@
+@font-face {/*코펍바탕*/
+    font-family: 'KoPubWorldBatang';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldBatangLight.ttf') format("truetype");
+    font-display: swap;
+  }
+
+
+
+
+.note_editor {
+    width: 90% !important;
+}
+
+.note-editable {
+    font-size: 13px;
+    font-family: 'KoPubWorldBatang', sans-serif, '굴림', '바탕','맑은 고딕','궁서','굴림체','돋움체','바탕체';
+}
+
+/* 스타일1: 가운데 정렬, 배경 이미지 */
+.quote { 
+    font-family: 'NanumMyeongjo' !important;
+    text-align: center; 
+    background: url(https://raw.githubusercontent.com/grxvityhj/iconsax/51d7820286b4c35d29313c7be2021732491a2868/icon/bold/quote-left-square.svg) no-repeat 50% 0; 
+    padding: 34px 0 0 0; 
+    font-size: 17px; 
+    line-height: 23pt; 
+    border: 0 none;
+  }
+  .desc{
+    font-family: 'Pretendard-Regular';
+    font-size: 15px;
+    padding: 10px 30px;
+    text-align: start;
+    text-justify: distribute;
+    line-height: 20px;
+  }
+  .desc1{
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+    padding: 30px;
+    text-align: start;
+    text-justify: distribute;
+    line-height: 20px;
+  }
+details {
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+summary {
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 10px;
+    background-color: #8585ff;
+    color: #fff;
+    padding: 10px;
+    width: 150px;
+}
+.table {
+    width: 100%; /* 표의 너비를 100%로 설정 */
+    border-collapse: collapse; /* 중복된 테두리를 병합 */
+    margin: 20px 0;
+  }
+  .table th,
+  .table td {
+    padding: 10px; /* 셀의 안쪽 여백 설정 */
+    border: 1px solid #ddd; /* 셀의 테두리 설정 */
+    text-align: left; /* 셀의 텍스트 정렬 (기본 왼쪽 정렬) */
+  }
+  
+  .table th {
+    background-color: #f4f4f4; /* 헤더 셀의 배경색 설정 */
+    font-weight: bold; /* 헤더 셀의 텍스트 굵게 설정 */
+  }
+  .tap{
+    font-family: 'Pretendard-Regular';
+    font-size: 13px;
+    padding: 10px;
+    color: #8f8f8f;
+    text-align: center;
+    text-justify: distribute;
+    line-height: 10px;
+  }

@@ -1,0 +1,26 @@
+<div class="mainbox">
+    <div class="category-buttons">
+        <button onclick="filterCaracter('all')">All</button>
+        <button onclick="filterCaracter('자컾')">자컾</button>
+        <button onclick="filterCaracter('자관')">자관</button>
+        <button onclick="filterCaracter('다인관')">다인관</button>
+        <button onclick="filterCaracter('자캐')">자캐</button>
+    </div>
+    <div class="card-box">
+        {% for list in post %}
+            {% if list.3 == 'p' %}
+                <div class="character-card" onclick="location.href='{% url 'post_detail' list.0 %}'" data-category="{{ list.9.0 }}">
+                    <div class="inner-border"></div>
+                    <img src="{{ list.8 }}" class="character-image">
+                    <div class="overlay">
+                        <div class="text-container">
+                            <h2 class="character-name">{{ list.1 }}</h2>
+                        </div>
+                    </div>
+                    <p class="character-details">{{ list.9.0 }}</p>
+                    <div class="overlay2"></div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

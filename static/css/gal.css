@@ -1,0 +1,142 @@
+.mainbox {
+    height: 900px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: 50px;
+}
+
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 최소 200px의 칸을 만들고, 가능한 한 많은 열을 만듭니다. */
+    gap: 10px; /* 갤러리 아이템 간격 */
+}
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* 호버 시 부드러운 확대 효과 */
+    display: inline-block;
+    overflow: hidden;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지를 비율에 맞춰 자르기 */
+    cursor: pointer;  /* 마우스 포인터를 변경 */
+}
+
+.gallery-item:hover {
+    transform: scale(1.1); /* 호버 시 확대 */
+    background-size: contain; /* 이미지 전체가 보이도록 변경 */
+    background-repeat: no-repeat; /* 확대된 이미지 반복 방지 */
+}
+
+
+
+/* 모달 창 스타일 설정 */
+.modal {
+    display: none; /* 숨김 상태로 시작 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    overflow: auto; /* 스크롤 허용 auto */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    position: relative;
+    overflow: auto; /* 스크롤 허용 auto */
+    border-radius: 8px;
+}
+
+.modal-content img {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.category-buttons {
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    height: 30px;
+}
+
+.category-buttons button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #8585ff;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+
+
+
+
+
+
+
+.postbox {
+    width: 100%;
+    height: 150px;
+    align-items: flex-start;
+    border: 1px solid #666666;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+}
+.postbox img {
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.post-content {
+    display: flex;
+    flex-direction: column; /* 제목과 본문이 세로로 나열되도록 설정 */
+}
+.posttitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.posttag {
+    display: flex;
+}
+.posttag p {
+    display: flex;
+    padding: 3px 10px;
+    margin: 3px;
+    background-color: #8585ff;
+    border-radius: 10px;
+    color: #fff;
+}
