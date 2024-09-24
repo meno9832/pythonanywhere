@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote',
     'corsheaders',
-    'ebhealthcheck.apps.EBHealthCheckConfig',
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
