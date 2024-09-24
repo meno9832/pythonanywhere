@@ -7,6 +7,10 @@ import re
 import json
 
 
+
+def health_check(request):
+    return HttpResponse("OK", status=200)
+
 config = {
     'host' : 'localhost',
     'user' : 'root',

@@ -11,7 +11,18 @@ SECRET_KEY = 'django-insecure-*0yz6=*tkw76%d()vi&2h4ttpzef*+avn$%@501h(5ewyt62^p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['43.200.60.11', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'myproject-dev222.us-west-2.elasticbeanstalk.com',
+    '43.200.60.11', 
+    'localhost', 
+    '127.0.0.1',
+    'phenomenon.ap-northeast-2.elasticbeanstalk.com',
+    ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_SSL_REDIRECT = True
+
 
 
 # Application definition
@@ -25,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote',
     'corsheaders',
+    'ebhealthcheck.apps.EBHealthCheckConfig',
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
@@ -169,3 +181,4 @@ SUMMERNOTE_CONFIG = {
 }
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
