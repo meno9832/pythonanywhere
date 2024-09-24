@@ -79,20 +79,30 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'menondb', # 데이터베이스 이름 
-        'USER': 'root', # 접속할 Database 계정 아이디 ex) root
-        'PASSWORD': 'a1b2c3d4e5',  # 접속할 Database 계정 비밀번호 ex) 1234
-        'HOST': 'localhost',   # host는 로컬 환경에서 동작한다면 ex) localhost
-        'PORT': '3306', # 설치시 설정한 port 번호를 입력한다. ex) 3306
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-        },
+if DEBUG == True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'menondb', # 데이터베이스 이름 
+            'USER': 'root', # 접속할 Database 계정 아이디 ex) root
+            'PASSWORD': 'a1b2c3d4e5',  # 접속할 Database 계정 비밀번호 ex) 1234
+            'HOST': 'localhost',   # host는 로컬 환경에서 동작한다면 ex) localhost
+            'PORT': '3306', # 설치시 설정한 port 번호를 입력한다. ex) 3306
+            'OPTIONS': {
+                'charset': 'utf8mb4',
+            },
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'menonia9832$default', # 데이터베이스 이름 
+            'USER': 'menonia9832', # 접속할 Database 계정 아이디 ex) root
+            'PASSWORD': 'a1b2c3d4e5!',  # 접속할 Database 계정 비밀번호 ex) 1234
+            'HOST': 'menonia9832.mysql.pythonanywhere-services.com',   # host는 로컬 환경에서 동작한다면 ex) localhost
+        }
+    }
 
 
 # Password validation
